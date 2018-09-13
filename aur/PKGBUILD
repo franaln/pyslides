@@ -1,0 +1,23 @@
+_pkgname=pyslides
+pkgname=pyslides-git
+pkgver=20180913
+pkgrel=1
+pkgdesc=""
+arch=('any')
+url="https://github.com/franaln/pyslides"
+license=('GPL')
+depends=('python')
+makedepends=('git')
+provides=(pyslides)
+conflicts=(pyslides)
+source=("git://github.com/franaln/pyslides.git")
+md5sums=('SKIP')
+
+pkgver() {
+    date +%Y%m%d
+}
+
+package() {
+    cd "${srcdir}/${_pkgname}"
+    python setup.py -q install --root="$pkgdir" --optimize=1
+}
