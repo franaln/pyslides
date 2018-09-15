@@ -1,1 +1,1 @@
-from pyslides import *
+from pyslides.pyslides import *
